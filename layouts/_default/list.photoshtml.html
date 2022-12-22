@@ -1,0 +1,15 @@
+{{ define "main" }}
+
+	{{- $list := where .Site.Pages ".Params.photos" "!=" nil -}}
+	{{- $len := (len $list) -}}
+	<div class="photos-grid-container">
+		{{ range $index, $value := $list }}
+			<a href="{{ .Permalink }}">
+				{{ range first 1 .Params.photos }}
+					<img src="{{ . }}" width="300" height="300" style="border-radius: 5px; max-width: 100%; height: auto;" class="photos-grid-item" loading="lazy" />
+				{{ end }}
+			</a>
+		{{ end }}
+	</div>
+
+{{ end }}

@@ -1,0 +1,21 @@
+<div class="post h-entry">
+
+  <header class="post-header">
+  {{ if .Title }}
+      <h1 class="p-name">{{ .Title }}</h1>
+  {{ end }}
+  </header>
+  <div class="post-meta">
+      <a href="{{ .Permalink }}"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2 2006" }}</time></a>
+    {{ range .Params.categories }} {{ $href := print (absURL "categories/") (urlize .) }}
+      • <a href="{{ $href }}">{{ . }}</a>
+    {{ end }}
+    <span class="conversation-wrapper" style="display: none">• <a href="{{ print "https://micro.blog/" .Site.Author.username }}" target="_blank" rel="noopener" class="conversation-on-mb conversation-on-mb-fallback">Also on Micro.blog</a></span>
+    </div>
+
+
+  <article class="post-content e-content">
+  {{ .Content }}
+  </article>
+
+</div>

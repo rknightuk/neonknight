@@ -1,0 +1,62 @@
+{{ define "main" }}
+
+{{ partial "post.html" . }}
+
+<article class="post-content e-content">
+
+{{ if eq .Type "post"}}
+  	{{ $pages := where site.RegularPages "Type" "post" }}
+  	{{ if and (gt (len $pages) 1) (in $pages . ) }}
+  		<nav class="pagination-nav">
+			{{ with $pages.Next . }}
+	    	<div>
+	    		<a class="prev" href="{{ .Permalink }}"><span>←</span>
+		      	<span>
+		        	{{ if .Name }} {{ .Name }} {{else}}Previous{{end}}
+		      	</span>
+	    		</a>
+	    	</div>
+	    	{{ end }} 
+	    	{{ with $pages.Prev . }}
+	    	<div>
+	    		<a class="next" href="{{ .Permalink }}">
+	      		<span>
+	    			{{ if .Name }} {{ .Name }} {{else}}Next{{end}}
+	      		</span>
+	      		<span>→</span>
+		    	</a>
+			</div>
+			{{ end }}
+  		</nav>
+  	{{ end }}
+{{ end }}
+
+</article>
+
+{{ if .Site.Params.include_conversation }}
+<script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
+{{ end }}
+
+<script>
+  // TODO: Temporary, will handle multiple instances in the future.
+  const conversationLink = document.querySelector('.conversation-on-mb');
+  const conversationWrapper = document.querySelector('.conversation-wrapper')
+  if (conversationWrapper)
+  {
+	const currentPageURLEncoded = encodeURIComponent('{{ .Permalink }}');
+
+	fetch('https://micro.blog/conversation.js?format=jsonfeed&url=' + currentPageURLEncoded)
+	.then(response => response.json())
+	.then(conversation => {
+		conversationWrapper.style.display = 'inline'
+		conversationLink.setAttribute('href', conversation.home_page_url);
+		conversationLink.innerHTML = 'Conversation on Micro.blog';
+		conversationLink.classList.remove('conversation-on-mb-fallback');
+	})
+	.catch((error) => {
+		// TODO: nothing for now…
+	});
+  }
+</script>
+
+{{ end }}

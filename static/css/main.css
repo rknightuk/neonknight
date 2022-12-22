@@ -1,0 +1,354 @@
+@font-face {
+    font-family: Bayshore;
+    src: url('/fonts/Bayshore.woff') format('woff');
+}
+
+:root {
+  --background-body: #ecf0f1;
+  --body-text: black;
+  --primary: #e84393;
+  --width: 800px;
+  --post-bg: #ecf0f1;
+  --big-shadow: 7px 7px var(--body-text);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background: var(--background-body);
+  color: var(--body-text);
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 1.1em;
+  background: linear-gradient(328deg, rgba(233, 52, 240, 1) 0%, rgba(234, 67, 135, 1) 100%, rgba(0, 212, 255, 1) 100%);
+  background-attachment: fixed;
+}
+
+.wrapper {
+    max-width: var(--width);
+    margin: 0 auto;
+}
+
+nav.pages {
+    border: 2px solid var(--body-text);
+    margin-bottom: 15px;
+    padding: 5px;
+    text-align: center;
+    background-color: var(--post-bg);
+    border: 2px solid var(--body-text);
+    box-shadow: var(--big-shadow);
+    box-sizing: border-box;
+}
+
+.header-wrapper {
+    max-width: var(--width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header {
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+}
+
+.header a {
+    color: var(--body-text);
+}
+
+.header a {
+    text-decoration: none;
+}
+
+.header a:hover {
+    text-decoration: underline;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.header .site-name {
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
+.header svg.icon {
+    fill: var(--body-text);
+    width: 30px;
+    height: 30px;
+}
+
+.header svg.icon:hover {
+    fill: white;
+}
+
+.social {
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+    align-items: center;
+}
+
+@media (max-width: 670px) {
+    .header {
+        padding: 10px 20px;
+    }
+
+    .social {
+        align-items: flex-start;
+        margin-top: 11px;
+    }
+
+    .site-categories {
+        margin-top: 20px;
+    }
+
+    .header svg.icon {
+        width: 23px;
+        height: 23px;
+    }
+}
+
+.social a {
+    text-decoration: none;
+    border-bottom: none;
+}
+
+.social a:hover {
+    text-decoration: none;
+}
+
+.menu-title {
+    font-family: Bayshore;
+    text-shadow: white 1px 1px 1px;
+    transform: rotate(-5deg);
+    letter-spacing: 3px;
+    max-width: var(--width);
+    margin: 0 auto;
+    font-size: 1.4em;
+}
+
+.menu-title a {
+    text-decoration: none;
+    border-bottom: none;
+    color: black;
+}
+
+.menu-title a:hover {
+    animation: color-change 3s infinite;
+    border-bottom: none;
+}
+
+@keyframes color-change {
+    0% {
+        color: #1abc9c;
+        fill: #1abc9c
+    }
+
+    10% {
+        color: #2ecc71;
+        fill: #2ecc71
+    }
+
+    20% {
+        color: #3498db;
+        fill: #3498db
+    }
+
+    30% {
+        color: #9b59b6;
+        fill: #9b59b6
+    }
+
+    40% {
+        color: #f1c40f;
+        fill: #f1c40f
+    }
+
+    50% {
+        color: #e67e22;
+        fill: #e67e22
+    }
+
+    60% {
+        color: #e74c3c;
+        fill: #e74c3c
+    }
+
+    70% {
+        color: #f39c12;
+        fill: #f39c12
+    }
+
+    80% {
+        color: #d35400;
+        fill: #d35400
+    }
+
+    90% {
+        color: #ff00ff;
+        fill: #ff00ff
+    }
+
+    100% {
+        color: #c0392b;
+        fill: #c0392b
+    }
+}
+
+.post {
+    border: 2px solid var(--body-text);
+    box-shadow: var(--big-shadow);
+    padding: 10px 10px 0 10px;
+    margin-bottom: 15px;
+    background-color: var(--post-bg);
+}
+
+.post-list {
+    border: 2px solid var(--body-text);
+    box-shadow: var(--big-shadow);
+    padding: 10px;
+    background-color: var(--background-body);
+
+}
+
+.post h1 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+.post-meta {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 0.8em;
+    border: 2px solid black;
+    box-shadow: 2px 2px var(--body-text);
+    background: var(--background-body);
+    margin-left: -35px;
+    padding-left: 10px;
+}
+
+@media (max-width: 815px)
+{
+    .post-meta {
+        margin: 0;
+    }
+}
+
+blockquote {
+  font-style: italic;
+  border-left: 1px solid var(--primary);
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 40px;
+  padding-left: 30px;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 2px solid var(--body-text);
+  color: var(--body-text);
+}
+
+a:hover {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+}
+
+.post img {
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+
+.post img:hover {
+  cursor: pointer;
+}
+
+.photogrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.photogrid img:first-child {
+  grid-column: span 3;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.photogrid img:not(:first-child) {
+  aspect-ratio: 1;
+}
+
+.photos-grid-container {
+  margin: 0 auto;
+  margin-top: 50px;
+  display: grid;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.photos-grid-container a {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-bottom: none;
+}
+
+.photos-grid-container img {
+  height: 100%!important;
+  width: 100%;
+  object-fit: cover;
+}
+
+.pagination-nav {
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  box-shadow: var(--big-shadow);
+  background-color: var(--background-body);
+  border: 2px solid var(--body-text);
+}
+
+.pagination-nav div {
+  flex: 1;
+}
+
+.pagination-nav div:last-child {
+  text-align: right;
+}
+
+.bookshelf_book {
+  padding-bottom: 10px;
+}
+
+.bookshelf_book img {
+  width: 55px;
+  height: 76px;
+}
+
+.microblog_conversation {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.footer {
+    max-width: var(--width);
+    margin: 15px auto 0 auto;
+    box-shadow: var(--big-shadow);
+    background-color: var(--background-body);
+    border: 2px solid var(--body-text);
+    padding: 0 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.archive_categories p {
+    margin: 0;
+}

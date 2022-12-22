@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+  {{ partial "head.html" . }}
+
+  <body>
+
+    {{ partial "header.html" . }}
+
+    <div class="page-content">
+      <div class="wrapper">
+		{{ block "main" . }}{{ end }}
+      </div>
+    </div>
+
+    {{ partial "footer.html" . }}
+    {{ partial "custom_footer.html" . }}
+
+  </body>
+
+  <script>
+    // from https://github.com/GeekyAubergine/zoeaubert-micro-theme
+    document.querySelectorAll(".post img").forEach((item) => {
+    item.addEventListener("click", (event) => {
+      const src = event.target.getAttribute("src");
+      window.open(src)
+    });
+  });
+  </script>
+
+</html>

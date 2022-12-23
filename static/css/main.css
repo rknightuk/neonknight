@@ -72,6 +72,13 @@ nav.pages {
     font-size: 1.5em;
 }
 
+@media (max-width: 460px) {
+    .header-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 .header svg.icon {
     fill: var(--body-text);
     width: 30px;
@@ -116,6 +123,7 @@ nav.pages {
 
 .social a:hover {
     text-decoration: none;
+    border-bottom: none;
 }
 
 .menu-title {
@@ -244,6 +252,7 @@ blockquote {
   margin-inline-start: 0;
   margin-inline-end: 40px;
   padding-left: 30px;
+  word-wrap: break-word;
 }
 
 a {

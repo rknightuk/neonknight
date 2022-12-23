@@ -10,6 +10,7 @@
   --width: 800px;
   --post-bg: #ecf0f1;
   --big-shadow: 7px 7px var(--body-text);
+  --small-shadow: 2px 2px var(--body-text);
 }
 
 body {
@@ -226,12 +227,13 @@ nav.pages {
     font-size: 1.2em;
 }
 
-.post-meta {
+.post-meta,
+.microblog_post {
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: 0.8em;
     border: 2px solid black;
-    box-shadow: 2px 2px var(--body-text);
+    box-shadow: var(--small-shadow);
     background: var(--background-body);
     margin-left: -35px;
     padding-left: 10px;
@@ -239,7 +241,8 @@ nav.pages {
 
 @media (max-width: 815px)
 {
-    .post-meta {
+    .post-meta,
+    .microblog_user {
         margin: 0;
     }
 }
@@ -345,6 +348,29 @@ a:hover {
 .microblog_conversation {
   margin: 0 auto;
   margin-top: 20px;
+}
+
+.microblog_post {
+    box-shadow: var(--big-shadow);
+    background-color: var(--background-body);
+    border: 2px solid var(--body-text);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.microblog_user {
+    display: flex;
+    align-items: center;
+    box-shadow: var(--small-shadow);
+    background-color: var(--background-body);
+    border: 2px solid var(--body-text);
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.microblog_avatar {
+    margin-right: 5px;
 }
 
 .footer {

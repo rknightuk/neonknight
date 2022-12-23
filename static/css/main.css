@@ -373,6 +373,10 @@ a:hover {
     margin-right: 5px;
 }
 
+.microblog_time {
+    font-size: 0.8em;
+}
+
 .footer {
     max-width: var(--width);
     margin: 15px auto 0 auto;

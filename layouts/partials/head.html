@@ -9,7 +9,11 @@
       {{ end }}
   </title>
 
-  <meta name="description" content="Maker of web things, Lego builder, cat owner, sometimes blogger, fortnightly podcaster">
+    <meta property="og:title" content="{{ site.Title }}" />
+    <meta name="og:description" content="Maker of web things, Lego builder, cat owner, sometimes blogger, fortnightly podcaster">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:image" content="https://rknight.me/assets/img/preview.png">
 
   <link rel="shortcut icon" href="https://micro.blog/{{ .Site.Author.username }}/favicon.png" type="image/x-icon" />
   <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
